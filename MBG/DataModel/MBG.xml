@@ -1,0 +1,160 @@
+<Database Name="MBG">
+	<Table Name="Users" EntityName="EUser" Comment="This represents a physical person that plays the game. It can be a simulated person, in which case Robot = 1">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+		<Column Name="Login" Type="String" Size="40"/>
+		<Column Name="Password" Type="String" Size="40"/>
+		<Column Name="Name" Type="String" Size="40"/>
+		<Column Name="Robot" Type="Boolean" Default="0"/>
+		<Column Name="Cash" Type="Integer"/>
+		<Row Data="1, 'admin', 'admin', 'admin', 0, 1000000"/>
+		<Row Data="2, 'God', 'God', 'God', 0, 1000000"/>
+		<Row Data="3, 'WorldBankCEO', 'WorldBankCEO', 'WorldBankCEO', 0, 1000000"/>
+		<Row Data="4, 'BillGates', 'BillGates', 'BillGates', 0, 1000000"/>
+	</Table>
+	<Table Name="Contacts" EntityName="EContact" Comment="This is a contact known by a user.">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+		<Column Name="ID_User_Owner" Type="Integer"/>
+		<Column Name="ID_User_Contact" Type="Integer"/>
+		<Column Name="Note" Type="String" Size="100"/>
+		<ForeignKey Name="FK_Contacts_Users_1" ReferingColumn="ID_User_Owner" ReferencedTable="Users" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Contacts_Users_2" ReferingColumn="ID_User_Contact" ReferencedTable="Users" ReferencedColumn="ID"/>
+		<ChildEntity Name="User_Owner" ForeignKey="FK_Contacts_Users_1"/>
+		<ChildEntity Name="User_Contact" ForeignKey="FK_Contacts_Users_2"/>
+	</Table>
+	<Table Name="Lifetime" EntityName="ELifetime" Comment="This keeps tracks of lifetime dates">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+		<Column Name="IssueDate" Type="DateTime"/>
+		<Column Name="CreationDate" Type="DateTime"/>
+		<Column Name="TerminationDate" Type="DateTime"/>
+		<Column Name="IsActive" Type="Boolean"/>
+	</Table>
+	<Table Name="Groups" EntityName="EGroup" Comment="This is a group of companies.">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+		<Column Name="ID_Country" Type="Integer"/>
+		<Column Name="ID_User_Ceo" Type="Integer"/>
+		<Column Name="ID_Lifetime" Type="Integer"/>
+		<Column Name="Name" Type="String" Size="60"/>
+		<Column Name="Number" Type="String" Size="20"/>
+		<ForeignKey Name="FK_Groups_Countries_1" ReferingColumn="ID_Country" ReferencedTable="Countries" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Groups_Users_1" ReferingColumn="ID_User_Ceo" ReferencedTable="Users" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Groups_Lifetime_1" ReferingColumn="ID_Lifetime" ReferencedTable="Lifetime" ReferencedColumn="ID"/>
+		<ChildEntity Name="Country" ForeignKey="FK_Groups_Countries_1"/>
+		<ChildEntity Name="User_Ceo" ForeignKey="FK_Groups_Users_1"/>
+		<ChildEntity Name="Lifetime" ForeignKey="FK_Groups_Lifetime_1"/>
+		<Row Data="1, 1, 1, 1, 'World group', '00000000'"/>
+	</Table>
+	<Table Name="Companies" EntityName="ECompany" Comment="This is a business company. It is owned by ID_User_Ceo. It can belong to a group owned by another user.">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+		<Column Name="ID_Country" Type="Integer"/>
+		<Column Name="ID_Group" Type="Integer" Nullable="true"/>
+		<Column Name="ID_User_Ceo" Type="Integer"/>
+		<Column Name="ID_Type" Type="Integer"/>
+		<Column Name="ID_Lifetime" Type="Integer"/>
+		<Column Name="Name" Type="String" Size="60"/>
+		<Column Name="Number" Type="String" Size="20"/>
+		<Column Name="Worker_Daily_Wage" Type="Integer"/>
+		<ForeignKey Name="FK_Companies_Countries_1" ReferingColumn="ID_Country" ReferencedTable="Countries" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Companies_Groups_1" ReferingColumn="ID_Group" ReferencedTable="Groups" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Companies_Users_1" ReferingColumn="ID_User_Ceo" ReferencedTable="Users" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Companies_Type_1" ReferingColumn="ID_Type" ReferencedTable="CompanyType" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Companies_Lifetime_1" ReferingColumn="ID_Lifetime" ReferencedTable="Lifetime" ReferencedColumn="ID"/>
+		<ChildEntity Name="Country" ForeignKey="FK_Companies_Countries_1"/>
+		<ChildEntity Name="Group" ForeignKey="FK_Companies_Groups_1"/>
+		<ChildEntity Name="User_Ceo" ForeignKey="FK_Companies_Users_1"/>
+		<ChildEntity Name="Type" ForeignKey="FK_Companies_Type_1"/>
+		<ChildEntity Name="Lifetime" ForeignKey="FK_Companies_Lifetime_1"/>
+		<Row Data="1, 1, 1, 1, 1, 5, 2, 'World Company', '00000000', 10000, 10"/>
+		<Row Data="2, 1, 1, 1, 1, 13, 2, 'World Bank', '00000001', 10000, 10"/>
+		<Row Data="3, 1, 1, 1, 1, 13, 3, 'World Finance Survey', '00000002', 10000, 10"/>
+		<Row Data="4, 1, NULL, 4, 1, 5, 4, 'Microsoft', '00000003', 10000, 10"/>
+		<Row Data="5, 1, NULL, 4, 1, 5, 4, 'Google', '00000003', 10000, 10"/>
+	</Table>
+	<Table Name="CompanyType" EntityName="ECompanyType" Comment="">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+		<Column Name="Code" Type="String" Size="20"/>
+		<Row Data="1, PASSENGER_TRANSPORT"/>
+		<Row Data="2, RESOURCE_TRANSPORT"/>
+		<Row Data="3, PRODUCT_TRANSPORT"/>
+		<Row Data="4, RESOURCE_PRODUCTION"/>
+		<Row Data="5, RESOURCE_VENDOR"/>
+		<Row Data="6, PRODUCT_PRODUCTION"/>
+		<Row Data="7, PRODUCT_DISTRIBUTION"/>
+		<Row Data="8, PRODUCT_VENDOR"/>
+		<Row Data="9, PERSON_SERVICE"/>
+		<Row Data="10, COMPUTER_SERVICE"/>
+		<Row Data="11, ESTATE_PRODUCTION"/>
+		<Row Data="12, ESTATE_TRADING"/>
+		<Row Data="13, BANK"/>
+		<Row Data="14, INSURANCE"/>
+		<Row Data="15, CINEMA"/>
+		<Row Data="16, HOTEL"/>
+		<Row Data="17, RESTAURANT"/>
+	</Table>
+	<Table Name="Countries" EntityName="ECountry" Comment="">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+		<Column Name="Code" Type="String" Size="20"/>
+		<Column Name="ID_Government_Type" Type="Integer"/>
+		<Row Data="1, FRANCE"/>
+	</Table>
+	<Table Name="Agencies" EntityName="EAgency" Comment="Agencies are where companies do business. It is located in an existing building and has a brand.">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+		<Column Name="ID_Company" Type="Integer"/>
+		<Column Name="ID_Building" Type="Integer"/>
+		<Column Name="ID_Brand" Type="Integer"/>
+		<Column Name="ID_Contract_Rent" Type="Integer"/>
+		<Column Name="Name" Type="String" Size="60"/>
+		<Column Name="Headquarters" Type="Boolean"/>
+		<Column Name="Market_Percent" Type="Float"/>
+		<ForeignKey Name="FK_Agencies_Companies_1" ReferingColumn="ID_Company" ReferencedTable="Companies" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Agencies_Buildings_1" ReferingColumn="ID_Building" ReferencedTable="Buildings" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Agencies_Brands_1" ReferingColumn="ID_Brand" ReferencedTable="Brands" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Agencies_Contracts_1" ReferingColumn="ID_Contract_Rent" ReferencedTable="Contracts" ReferencedColumn="ID"/>
+		<ChildEntity Name="Company" ForeignKey="FK_Agencies_Companies_1"/>
+		<ChildEntity Name="Building" ForeignKey="FK_Agencies_Buildings_1"/>
+		<ChildEntity Name="Brand" ForeignKey="FK_Agencies_Brands_1"/>
+		<ChildEntity Name="Contract_Rent" ForeignKey="FK_Agencies_Contracts_1"/>
+	</Table>
+	<Table Name="Contracts" EntityName="EContract" Comment="A contract represents work, goods or money that a company must provide to another company, in exchange for work, goods or money.">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+		<Column Name="ID_Company_1" Type="Integer"/>
+		<Column Name="ID_Company_2" Type="Integer"/>
+		<Column Name="ID_Type" Type="Integer"/>
+		<Column Name="ID_Lifetime" Type="Integer"/>
+		<Column Name="ID_Due_1" Type="Integer"/>
+		<Column Name="ID_Due_2" Type="Integer"/>
+		<Column Name="Signature_Company_1" Type="Boolean"/>
+		<Column Name="Signature_Company_2" Type="Boolean"/>
+		<Column Name="Periodicity_Months" Type="Integer"/>
+		<Column Name="Periodicity_Days" Type="Integer"/>
+		<Column Name="Cancel_Notice_Days" Type="Integer"/>
+		<Column Name="Cancel_Fee" Type="Integer"/>
+		<ForeignKey Name="FK_Contracts_Companies_1" ReferingColumn="ID_Company_1" ReferencedTable="Companies" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Contracts_Companies_2" ReferingColumn="ID_Company_2" ReferencedTable="Companies" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Contracts_Lifetime_1" ReferingColumn="ID_Lifetime" ReferencedTable="Lifetime" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Contracts_ContractDue_1" ReferingColumn="ID_Due_1" ReferencedTable="ContractDue" ReferencedColumn="ID"/>
+		<ForeignKey Name="FK_Contracts_ContractDue_2" ReferingColumn="ID_Due_2" ReferencedTable="ContractDue" ReferencedColumn="ID"/>
+		<ChildEntity Name="Company_1" ForeignKey="FK_Contracts_Companies_1"/>
+		<ChildEntity Name="Company_2" ForeignKey="FK_Contracts_Companies_2"/>
+		<ChildEntity Name="Lifetime" ForeignKey="FK_Contracts_Lifetime_1"/>
+		<ChildEntity Name="Due_1" ForeignKey="FK_Contracts_ContractDue_1"/>
+		<ChildEntity Name="Due_2" ForeignKey="FK_Contracts_ContractDue_2"/>
+	</Table>
+	<Table Name="ContractType" EntityName="EContractType" Comment="">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+		<Column Name="Code" Type="String" Size="20"/>
+		<Row Data="1, RENT"/>
+		<Row Data="2, BRAND_USAGE"/>
+		<Row Data="3, RESOURCE_SELL"/>
+		<Row Data="4, PRODUCT_SELL"/>
+		<Row Data="5, BRAND_SELL"/>
+		<Row Data="6, ESTATE_SELL"/>
+		<Row Data="7, COMPANY_PART_SELL"/>
+		<Row Data="8, COMPANY_SELL"/>
+		<Row Data="9, GROUP_SELL"/>
+		<Row Data="10, RESOURCE_TRANSPORT"/>
+		<Row Data="11, PRODUCT_TRANSPORT"/>
+	</Table>
+	<Table Name="ContractDue" EntityName="EContractDue" Comment="">
+		<Column Name="ID" Type="Integer" Primary="true" AutoIncrement="true"/>
+	</Table>
+</Database>

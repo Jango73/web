@@ -1,0 +1,15 @@
+
+<FilesMatch "^\.php">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>
+
+# Turn on URL rewriting
+# RewriteEngine On
+
+# Installation directory
+# RewriteBase .
+
+# Rewrite all other URLs to index.php/URL
+# RewriteRule .* Index.php/$0 [PT]

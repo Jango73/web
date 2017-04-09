@@ -1,0 +1,16 @@
+sql - get last id on insert
+php - call reflection class static method
+
+if ((result = mysql_store_result(&mysql)) == 0 &&
+    mysql_field_count(&mysql) == 0 &&
+    mysql_insert_id(&mysql) != 0)
+{
+    used_id = mysql_insert_id(&mysql);
+}
+
+INSERT INTO foo (auto,text)
+    VALUES(NULL,'text');         # generate ID by inserting NULL
+INSERT INTO foo2 (id,text)
+    VALUES(LAST_INSERT_ID(),'text');  # use ID in second table
+
+C:\Program Files (x86)\EasyPHP-5.3.9\conf_files

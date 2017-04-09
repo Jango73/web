@@ -1,0 +1,51 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+
+
+<head>
+
+
+
+    <title>
+    Mass business game
+    </title>
+
+    <link rel="stylesheet" href="JqWidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="JqWidgets/jqwidgets/styles/jqx.classic.css" type="text/css" />
+    <script type="text/javascript" src="JqWidgets/scripts/gettheme.js"></script>
+    <script type="text/javascript" src="JqWidgets/scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="JqWidgets/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="JqWidgets/jqwidgets/jqxmenu.js"></script>
+    <script type="text/javascript" src="JqWidgets/jqwidgets/jqxbuttons.js"></script>
+
+</head>
+
+<body>
+
+    <div id='content'>
+
+        <script type="text/javascript">
+            $(document).ready
+            (
+                function ()
+                {
+                    var theme = getTheme();
+                    $("#jqxMenu").jqxMenu({ width: '1000', height: '30', theme: theme });
+				}
+            );
+
+        </script>
+    </div>
+
+    <div style='width: 1000px;' id='jqxWidget'>
+        <div id='jqxMenu'>
+		<ul><li>Home</li><li>Personal bank</li><li>Companies</li></ul>
+		<p class='PageTitle'>Home</p>
+	</div>
+
+</body>
+
+</html>
