@@ -1,0 +1,3 @@
+[submodule "MBG/jQWidgets"]
+	path = MBG/jQWidgets
+	url = https://github.com/jqwidgets/jQWidgets.git

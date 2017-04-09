@@ -90,15 +90,15 @@
 	Mass business game
 	</title>
 
-	<link rel="stylesheet" href="./JqWidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
-	<link rel="stylesheet" href="./JqWidgets/jqwidgets/styles/jqx.classic.css" type="text/css" />
-	<script type="text/javascript" src="./JqWidgets/scripts/gettheme.js"></script>
-	<script type="text/javascript" src="./JqWidgets/scripts/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="./JqWidgets/jqwidgets/jqxcore.js"></script>
-	<script type="text/javascript" src="./JqWidgets/jqwidgets/jqxmenu.js"></script>
-	<script type="text/javascript" src="./JqWidgets/jqwidgets/jqxtabs.js"></script>
-	<script type="text/javascript" src="./JqWidgets/jqwidgets/jqxpanel.js"></script>
-	<script type="text/javascript" src="./JqWidgets/jqwidgets/jqxbuttons.js"></script>
+	<link rel="stylesheet" href="./jQWidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
+	<link rel="stylesheet" href="./jQWidgets/jqwidgets/styles/jqx.classic.css" type="text/css" />
+	<script type="text/javascript" src="./jQWidgets/scripts/gettheme.js"></script>
+	<script type="text/javascript" src="./jQWidgets/scripts/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="./jQWidgets/jqwidgets/jqxcore.js"></script>
+	<script type="text/javascript" src="./jQWidgets/jqwidgets/jqxmenu.js"></script>
+	<script type="text/javascript" src="./jQWidgets/jqwidgets/jqxtabs.js"></script>
+	<script type="text/javascript" src="./jQWidgets/jqwidgets/jqxpanel.js"></script>
+	<script type="text/javascript" src="./jQWidgets/jqwidgets/jqxbuttons.js"></script>
 
 </head>
 
