@@ -9,7 +9,7 @@ class EventHandler
 		$this->Control = $NewControl;
 	}
 
-	public function HandleEvent($Event, $Param)
+	public function HandleEvent($Context, $Control, $Event, $Param)
 	{
 	}
 }

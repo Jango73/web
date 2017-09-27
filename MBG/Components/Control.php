@@ -8,7 +8,7 @@ class EventHandler
 	{
 	}
 
-	public function HandleEvent($Control, $Event, $Param)
+	public function HandleEvent($Context, $Control, $Event, $Param)
 	{
 		return '';
 	}

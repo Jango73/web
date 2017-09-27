@@ -101,7 +101,7 @@ class Entity
 		return true;
 	}
 
-	public function Persist($IncludeChildren=false)
+	public function Persist($IncludeChildren = false)
 	{
 		$Output = "";
 
@@ -135,7 +135,7 @@ class Entity
 		return $Result;
 	}
 
-	public function PersistChildren($IncludeChildren=false)
+	public function PersistChildren($IncludeChildren = false)
 	{
 	}
 
