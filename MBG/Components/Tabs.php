@@ -12,11 +12,18 @@ class Tabs extends Control
 	public function Render($Context)
 	{
 		// JQX
+		/*
 		$Text = "$(\"#" . $this->Name . "\").jqxTabs({ "
 			. "width: '". $this->Width
 			. "', height: '" . $this->Height
 			. "', selectionTracker: 'checked"
 			. "', theme: theme });\n";
+		*/
+
+		$Text = "$(\"#" . $this->Name . "\").jqxTabs({ "
+			. "width: '". $this->Width
+			. "', height: '" . $this->Height
+			. "', selectionTracker: 'checked });\n";
 
 		$Context->AddControlText($Text);
 

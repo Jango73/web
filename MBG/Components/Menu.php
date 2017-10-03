@@ -45,7 +45,9 @@ class Menu extends Control
 	public function Render($Context)
 	{
 		// JQX
-		$Text = "$(\"#" . $this->Name . "\").jqxMenu({ width: '" . $this->Width . "', height: '" . $this->Height . "', theme: theme });\n";
+		// $Text = "$(\"#" . $this->Name . "\").jqxMenu({ width: '" . $this->Width . "', height: '" . $this->Height . "', theme: theme });\n";
+		$Text = "$(\"#" . $this->Name . "\").jqxMenu({ width: '" . $this->Width . "', height: '" . $this->Height . "' });\n";
+		$Text .= "$(\"#" . $this->Name . "\").css('visibility', 'visible');\n";
 		$Context->AddControlText($Text);
 
 		$Text = "";

@@ -12,7 +12,8 @@ class Button extends Control
 	public function Render($Context)
 	{
 		// JQX
-		$Text = "$(\"#" . $this->Name . "\").jqxButton({ width: '" . $this->Width . "', height: '" . $this->Height . "', theme: theme });\n";
+		// $Text = "$(\"#" . $this->Name . "\").jqxButton({ width: '" . $this->Width . "', height: '" . $this->Height . "', theme: theme });\n";
+		$Text = "$(\"#" . $this->Name . "\").jqxButton({ width: '" . $this->Width . "', height: '" . $this->Height . "' });\n";
 		$Context->AddControlText($Text);
 
 		$Text = "";

@@ -12,7 +12,8 @@ class Panel extends Control
 	public function Render($Context)
 	{
 		// JQX
-		$txt = "$(\"#" . $this->Name . "\").jqxPanel({ width: '" . $this->Width . "', height: '" . $this->Height . "', theme: theme });\n";
+		// $txt = "$(\"#" . $this->Name . "\").jqxPanel({ width: '" . $this->Width . "', height: '" . $this->Height . "', theme: theme });\n";
+		$txt = "$(\"#" . $this->Name . "\").jqxPanel({ width: '" . $this->Width . "', height: '" . $this->Height . "' });\n";
 		// $Context->AddControlText($txt);
 
 		// HTML
