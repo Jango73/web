@@ -19,11 +19,11 @@ class Connection
 	
 	public function Connect()
 	{
-		$this->Link = mysql_connect($this->Host, $this->Login, $this->Pass);
+		$this->Link = mysqli_connect($this->Host, $this->Login, $this->Pass);
 
 		if ($this->Link != null && $this->Database != '')
 		{
-			mysql_select_db($this->Database, $this->Link);
+			mysqli_select_db($this->Link, $this->Database);
 			return true;
 		}
 
@@ -34,7 +34,7 @@ class Connection
 	{
 		if ($this->Link != null)
 		{
-			mysql_close($this->Link);
+			mysqli_close($this->Link);
 			$this->Link = null;
 		}
 	}
@@ -42,10 +42,10 @@ class Connection
 	public function ExecuteDataset($Query)
 	{
 		$Output = Array();
-		$Result = mysql_query($Query, $this->Link);
+		$Result = mysqli_query($Query, $this->Link);
 		if ($Result != null)
 		{
-			while ($Row = mysql_fetch_object($Result))
+			while ($Row = mysqli_fetch_object($Result))
 			{
 				$Output[] = $Row;
 			}

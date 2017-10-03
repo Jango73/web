@@ -7,7 +7,7 @@ require_once "TitleLabel.php";
 
 class HomePage extends Page
 {
-	public function __construct ($Context, $Name)
+	public function __construct($Context, $Name)
 	{
 		parent::__construct($Context, $Name);
 

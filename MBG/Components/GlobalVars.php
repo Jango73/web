@@ -18,7 +18,7 @@ class GlobalVars
 
 	const VarName_UserID = "userid";
 
-	public function __construct ()
+	public function __construct()
 	{
 		$this->CheckCheating();
 

@@ -65,7 +65,7 @@ class LogInHandler extends EventHandler
 
 class LogInPage extends Page
 {
-	public function __construct ($Context, $Name)
+	public function __construct($Context, $Name)
 	{
 		parent::__construct($Context, $Name);
 

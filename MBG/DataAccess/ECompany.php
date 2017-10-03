@@ -66,7 +66,7 @@ class ECompany extends Entity
 		$this->Lifetime = $SearchLifetime->GetSingle($this->ID_Lifetime, true);
 	}
 
-	public function PersistChildren($IncludeChildren)
+	public function PersistChildren($IncludeChildren = false)
 	{
 	}
 
