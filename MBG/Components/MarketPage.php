@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Page.php';
+require_once 'php-entities/Components/Page.php';
 
 class MarketPage extends Page
 {

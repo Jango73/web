@@ -1,13 +1,13 @@
 <?php
 
-require_once "Page.php";
-require_once "RenderContext.php";
+require_once "php-entities/Components/Page.php";
+require_once "php-entities/Components/RenderContext.php";
 
-require_once "Tabs.php";
-require_once "Panel.php";
-require_once "Label.php";
-require_once "TitleLabel.php";
-require_once "Button.php";
+require_once "php-entities/Components/Tabs.php";
+require_once "php-entities/Components/Panel.php";
+require_once "php-entities/Components/Label.php";
+require_once "php-entities/Components/TitleLabel.php";
+require_once "php-entities/Components/Button.php";
 
 require_once "CompanyGeneralInformation.php";
 require_once "CompanyAgencies.php";

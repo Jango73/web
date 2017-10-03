@@ -1,10 +1,10 @@
 <?php
 
-require_once 'Panel.php';
-require_once 'RenderContext.php';
+require_once 'php-entities/Components/Panel.php';
+require_once 'php-entities/Components/RenderContext.php';
 
-require_once 'Label.php';
-require_once 'Button.php';
+require_once 'php-entities/Components/Label.php';
+require_once 'php-entities/Components/Button.php';
 
 require_once 'DataAccess/EAgency.php';
 

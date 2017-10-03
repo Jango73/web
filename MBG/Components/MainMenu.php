@@ -1,7 +1,7 @@
 <?php
 
-require_once "Menu.php";
-require_once "RenderContext.php";
+require_once "php-entities/Components/Menu.php";
+require_once "php-entities/Components/RenderContext.php";
 
 class MainMenuHandler extends EventHandler
 {

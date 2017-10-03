@@ -1,14 +1,11 @@
 <?php
 
-class Strings
+class MBGStrings
 {
 	var $Data;
-	var $Lang;
 
-	public function __construct($Lang)
+	public function __construct()
 	{
-		$this->Lang = $Lang;
-
 		$this->Data = Array(
 			"en" => Array(
 				"HOME" => "Home",
@@ -202,17 +199,9 @@ class Strings
 		);
 	}
 
-	public function GetString($Code)
+	public function GetData()
 	{
-		if (isset($this->Data[$this->Lang]))
-		{
-			if (isset($this->Data[$this->Lang][$Code]))
-			{
-				return $this->Data[$this->Lang][$Code];
-			}
-		}
-
-		return $Code;
+		return $this->Data;
 	}
 }
 

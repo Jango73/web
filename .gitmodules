@@ -1,3 +1,6 @@
 [submodule "MBG/jQWidgets"]
 	path = MBG/jQWidgets
 	url = https://github.com/jqwidgets/jQWidgets.git
+[submodule "MBG/php-entities"]
+	path = MBG/php-entities
+	url = https://github.com/Jango73/php-entities.git

@@ -1,6 +1,6 @@
 <?php
 
-require_once("Entity.php");
+require_once("php-entities/DataAccess/Entity.php");
 
 class EBrand extends Entity
 {

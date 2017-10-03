@@ -1,7 +1,7 @@
 <?php
 
-require_once "Page.php";
-require_once "RenderContext.php";
+require_once "php-entities/Components/Page.php";
+require_once "php-entities/Components/RenderContext.php";
 
 class WrongPage extends Page
 {

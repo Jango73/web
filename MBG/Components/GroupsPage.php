@@ -1,10 +1,11 @@
 <?php
 
-require_once 'Page.php';
-require_once 'RenderContext.php';
+require_once 'php-entities/Components/Page.php';
+require_once 'php-entities/Components/RenderContext.php';
 
-require_once 'Label.php';
-require_once 'Button.php';
+require_once 'php-entities/Components/Label.php';
+require_once 'php-entities/Components/Button.php';
+
 require_once 'GroupPreview.php';
 
 require_once 'DataAccess/EGroup.php';

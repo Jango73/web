@@ -1,8 +1,8 @@
 <?php
 
+require_once("php-entities/DataAccess/Entity.php");
+require_once("php-entities/DataAccess/Connection.php");
 require_once("DataAccess/Config.php");
-require_once("DataAccess/Connection.php");
-require_once("DataAccess/Entity.php");
 
 session_start();
 

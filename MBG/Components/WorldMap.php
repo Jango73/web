@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Control.php';
+require_once 'php-entities/Components/Control.php';
 
 class WorldMap extends Control
 {

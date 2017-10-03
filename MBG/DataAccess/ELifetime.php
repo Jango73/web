@@ -1,6 +1,6 @@
 <?php
 
-require_once("Entity.php");
+require_once("php-entities/DataAccess/Entity.php");
 require_once("DBNames.php");
 
 class ELifetime extends Entity

@@ -1,7 +1,8 @@
 <?php
 
-	require_once "RenderContext.php";
+	require_once "php-entities/Components/RenderContext.php";
 	require_once "MainMenu.php";
+	require_once "MBGStrings.php";
 
 	require_once "HomePage.php";
 	require_once "LogInPage.php";
@@ -18,6 +19,9 @@
 	require_once "WrongPage.php";
 
 	$Context = new RenderContext();
+	$MBGStrings = new MBGStrings();
+
+	$Context->GetStrings()->SetData($MBGStrings->GetData());
 
 	$Context->RegisterPage("WrongPage", "WrongPage");
 	$Context->RegisterPage("Home", "HomePage");

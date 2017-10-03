@@ -1,6 +1,7 @@
 <?php
 
-require_once "Button.php";
+require_once "php-entities/Components/Button.php";
+
 require_once("DataAccess/EUser.php");
 
 if (isset($_SESSION['User']))
