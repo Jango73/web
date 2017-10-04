@@ -1,7 +1,7 @@
 <?php
 
-require_once("DataAccess\Config.php");
-require_once("DataAccess\Connection.php");
+require_once("DataAccess/Config.php");
+require_once("php-entities/DataAccess/Connection.php");
 
 //-------------------------------------------------------------------------------------------------
 
@@ -25,19 +25,19 @@ $Conn->Disconnect();
 $Conn = new Connection($DB_Host, $DB_Login, $DB_Password, $DB_Database);
 $Conn->Connect();
 
-$requetes = "";
+$requests = "";
 $sql = file("DataAccess/CreateDB.sql");
 foreach ($sql as $l)
 {
 	if (substr(trim($l),0,2)!="--")
 	{
-		$requetes .= $l;
+		$requests .= $l;
 	}
 }
 
 $num_errors = 0;
  
-$reqs = split(";",$requetes);
+$reqs = split(";", $requests);
 
 foreach ($reqs as $req)
 {

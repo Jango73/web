@@ -96,7 +96,6 @@
 
 	<link rel="stylesheet" href="./jQWidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
 	<link rel="stylesheet" href="./jQWidgets/jqwidgets/styles/jqx.classic.css" type="text/css" />
-	<!-- <script type="text/javascript" src="./jQWidgets/scripts/gettheme.js"></script> -->
 	<script type="text/javascript" src="./jQWidgets/scripts/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="./jQWidgets/jqwidgets/jqxcore.js"></script>
 	<script type="text/javascript" src="./jQWidgets/jqwidgets/jqxmenu.js"></script>
@@ -123,7 +122,6 @@
 					// type: "POST"
 				});
 
-				// var theme = getTheme();
 				<?php echo $Context->GetControlText(); ?>
 			}
 		);

@@ -13,7 +13,7 @@ class BankAccountGeneralInformation extends Panel
 {
 	protected $Account;
 
-	public function __construct ($Context, $Account, $NewName, $NewText, $NewWidth, $NewHeight)
+	public function __construct($Context, $Account, $NewName, $NewText, $NewWidth, $NewHeight)
 	{
 		parent::__construct($NewName, $NewText, $NewWidth, $NewHeight);
 

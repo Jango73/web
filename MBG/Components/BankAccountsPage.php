@@ -13,7 +13,7 @@ class BankAccountsPage extends Page
 {
 	protected $AccountList;
 
-	public function __construct ($Context, $Name)
+	public function __construct($Context, $Name)
 	{
 		parent::__construct($Context, $Name);
 
