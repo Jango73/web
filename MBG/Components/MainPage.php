@@ -147,8 +147,10 @@
 		}
 	</script>
 
-	<div style='width: <?php echo $Context->GetVars()->PageWidth; ?>px; font-size: 13px; font-family: Verdana;' id='jqxWidget'>
-	<?php echo $Context->GetText(); ?>
+	<div style='width: 100%; display: -webkit-flex; display: flex; -webkit-justify-content: center; justify-content: center;'>
+		<div style='width: <?php echo $Context->GetVars()->PageWidth; ?>px; font-size: 13px; font-family: Verdana;' id='jqxWidget'>
+			<?php echo $Context->GetText(); ?>
+		</div>
 	</div>
 
 </div>
