@@ -9,15 +9,11 @@ class ContactsPage extends Page
 	{
 		parent::__construct($Context, $Name);
 
-		// Check base features
-		if ($Context->GetVars()->User_ID == null)
+		if ($this->checkAccess($Context))
 		{
-			$this->AddControl(new Label("", $Context->GetString("NOACCESSIFNOLOGGED"), 100, 30));
-			return;
+			// Create controls
+			$this->AddControl(new TitleLabel("", "Contacts", $this->Width, 30));
 		}
-
-		// Create controls
-		$this->AddControl(new TitleLabel("", "Contacts", $this->Width, 30));
 	}
 }
 

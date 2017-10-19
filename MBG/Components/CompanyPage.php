@@ -23,44 +23,40 @@ class CompanyPage extends Page
 	{
 		parent::__construct($Context, $Name);
 
-		// Check base features
-		if ($Context->GetVars()->User_ID == null)
+		if ($this->checkAccess($Context))
 		{
-			$this->AddControl(new Label("", $Context->GetString("NOACCESSIFNOLOGGED"), 100, 30));
-			return;
-		}
+			// Create controls
+			$this->Company = new ECompany();
+			$this->Company = $this->Company->GetSingle($Context->GetVars()->ID, true);
 
-		// Create controls
-		$this->Company = new ECompany();
-		$this->Company = $this->Company->GetSingle($Context->GetVars()->ID, true);
-
-		if ($this->Company != null)
-		{
-			if ($this->Company->ID_User_Ceo == $Context->GetVars()->User_ID)
+			if ($this->Company != null)
 			{
-				$TabsHeight = 500;
+				if ($this->Company->ID_User_Ceo == $Context->GetVars()->User_ID)
+				{
+					$TabsHeight = 500;
 
-				$this->AddControl(new TitleLabel("Company", $this->Company->Name, $this->Width, 30));
+					$this->AddControl(new TitleLabel("Company", $this->Company->Name, $this->Width, 30));
 
-				$Tabs = new Tabs("CompanyTabs", $this->Company->Name, $this->Width, $TabsHeight);
+					$Tabs = new Tabs("CompanyTabs", $this->Company->Name, $this->Width, $TabsHeight);
 
-				$Tabs->AddControl(new CompanyGeneralInformation($Context, $this->Company, "GeneralPanel", "General information", $this->Width - 20, $TabsHeight - 20));
-				$Tabs->AddControl(new CompanyAgencies($Context, $this->Company, "AgenciesPanel", "Agencies", $this->Width - 20, $TabsHeight - 20));
-				$Tabs->AddControl(new Panel("BrandsPanel", "Brands", $this->Width - 20, $TabsHeight - 20));
-				$Tabs->AddControl(new Panel("AssetsPanel", "Assets", $this->Width - 20, $TabsHeight - 20));
-				$Tabs->AddControl(new CompanyContracts($Context, $this->Company, "ContractsPanel", "Contracts", $this->Width - 20, $TabsHeight - 20));
-				$Tabs->AddControl(new Panel("IncomePanel", "Income", $this->Width - 20, $TabsHeight - 20));
+					$Tabs->AddControl(new CompanyGeneralInformation($Context, $this->Company, "GeneralPanel", "General information", $this->Width - 20, $TabsHeight - 20));
+					$Tabs->AddControl(new CompanyAgencies($Context, $this->Company, "AgenciesPanel", "Agencies", $this->Width - 20, $TabsHeight - 20));
+					$Tabs->AddControl(new Panel("BrandsPanel", "Brands", $this->Width - 20, $TabsHeight - 20));
+					$Tabs->AddControl(new Panel("AssetsPanel", "Assets", $this->Width - 20, $TabsHeight - 20));
+					$Tabs->AddControl(new CompanyContracts($Context, $this->Company, "ContractsPanel", "Contracts", $this->Width - 20, $TabsHeight - 20));
+					$Tabs->AddControl(new Panel("IncomePanel", "Income", $this->Width - 20, $TabsHeight - 20));
 
-				$this->AddControl($Tabs);
+					$this->AddControl($Tabs);
+				}
+				else
+				{
+					$Context->GetVars()->CheatSuspected();
+				}
 			}
 			else
 			{
-				$Context->GetVars()->CheatSuspected();
+				$this->AddControl(new Label("Company", "Oups, this company does not exist", 100, 30));
 			}
-		}
-		else
-		{
-			$this->AddControl(new Label("Company", "Oups, this company does not exist", 100, 30));
 		}
 	}
 }

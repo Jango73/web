@@ -18,25 +18,21 @@ class GroupsPage extends Page
 	{
 		parent::__construct($Context, $Name);
 
-		// Check base features
-		if ($Context->GetVars()->User_ID == null)
+		if ($this->checkAccess($Context))
 		{
-			$this->AddControl(new Label("", "No access to this page if not logged in.", 100, 30));
-			return;
-		}
+			// Create controls
+	        $this->AddControl(new TitleLabel("Groups", $Context->GetString("MYGROUPS"), 100, 30));
 
-		// Create controls
-        $this->AddControl(new TitleLabel("Groups", $Context->GetString("MYGROUPS"), 100, 30));
+			$this->GroupList = new EGroup();
+			$Crit = Array("ID_User_Ceo" => $Context->GetVars()->User_ID);
+			$this->GroupList = $this->GroupList->GetByCriteria($Crit, true);
 
-		$this->GroupList = new EGroup();
-		$Crit = Array("ID_User_Ceo" => $Context->GetVars()->User_ID);
-		$this->GroupList = $this->GroupList->GetByCriteria($Crit, true);
+			foreach ($this->GroupList as $Group)
+			{
+				$OwnedByUser = ($Group->ID_User_Ceo == $Context->GetVars()->User_ID);
 
-		foreach ($this->GroupList as $Group)
-		{
-			$OwnedByUser = ($Group->ID_User_Ceo == $Context->GetVars()->User_ID);
-
-			$this->AddControl(new GroupPreview($Context, $Group, $OwnedByUser, 'Group' . $Group->ID, '', $this->Width, 200));
+				$this->AddControl(new GroupPreview($Context, $Group, $OwnedByUser, 'Group' . $Group->ID, '', $this->Width, 200));
+			}
 		}
 	}
 

@@ -66,33 +66,29 @@ class CompanyCreatePage extends Page
 	{
 		parent::__construct($Context, $Name);
 
-		// Check base features
-		if ($Context->GetVars()->User_ID == null)
+		if ($this->checkAccess($Context))
 		{
-			$this->AddControl(new Label("", $Context->GetString("NOACCESSIFNOLOGGED"), 100, 30));
-			return;
+			// Create controls
+			$this->AddControl(new TitleLabel("Companies", $Context->GetString("CREATECOMPANY"), 100, 30));
+
+			$NewDiv = new SimpleDiv("", "");
+			$NewDiv->AddControl(new Label("", $Context->GetString("NAME"), 100, 30));
+			$NewDiv->AddControl(new TextBox("CompanyName", "", 100, 30));
+			$this->AddControl($NewDiv);
+
+			$NewDiv = new SimpleDiv("", "");
+			$NewDiv->AddControl(new Label("", $Context->GetString("TYPE"), 100, 30));
+			$NewDiv->AddControl(new TextBox("CompanyType", "", 100, 30));
+			$this->AddControl($NewDiv);
+
+			$NewDiv = new SimpleDiv("", "");
+			$NewDiv->AddControl(new Label("", "", 100, 30));
+			$Btn = new FormButton("CreateCompany", $Context->GetString("SUBMITCREATION"), 140, 30);
+			$Btn->SetControlNames(Array("CompanyName", "CompanyType"));
+			$Btn->SetEventHandler(new CreateCompanyHandler());
+			$NewDiv->AddControl($Btn);
+			$this->AddControl($NewDiv);
 		}
-
-		// Create controls
-		$this->AddControl(new TitleLabel("Companies", $Context->GetString("CREATECOMPANY"), 100, 30));
-
-		$NewDiv = new SimpleDiv("", "");
-		$NewDiv->AddControl(new Label("", $Context->GetString("NAME"), 100, 30));
-		$NewDiv->AddControl(new TextBox("CompanyName", "", 100, 30));
-		$this->AddControl($NewDiv);
-
-		$NewDiv = new SimpleDiv("", "");
-		$NewDiv->AddControl(new Label("", $Context->GetString("TYPE"), 100, 30));
-		$NewDiv->AddControl(new TextBox("CompanyType", "", 100, 30));
-		$this->AddControl($NewDiv);
-
-		$NewDiv = new SimpleDiv("", "");
-		$NewDiv->AddControl(new Label("", "", 100, 30));
-		$Btn = new FormButton("CreateCompany", $Context->GetString("SUBMITCREATION"), 140, 30);
-		$Btn->SetControlNames(Array("CompanyName", "CompanyType"));
-		$Btn->SetEventHandler(new CreateCompanyHandler());
-		$NewDiv->AddControl($Btn);
-		$this->AddControl($NewDiv);
 	}
 }
 
