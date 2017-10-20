@@ -22,7 +22,8 @@ class EContract extends Entity
 	var $Periodicity_Months;
 	var $Periodicity_Days;
 	var $Cancel_Notice_Days;
-	var $Cancel_Fee;
+	var $Company_1_Cancel_Fee;
+	var $Company_2_Cancel_Fee;
 	var $Last_Statisfied_Time;
 
 	var $Company1;
@@ -51,7 +52,8 @@ class EContract extends Entity
 			DBNames::Tbl_Contracts_Col_Periodicity_Months,
 			DBNames::Tbl_Contracts_Col_Periodicity_Days,
 			DBNames::Tbl_Contracts_Col_Cancel_Notice_Days,
-			DBNames::Tbl_Contracts_Col_Cancel_Fee,
+			DBNames::Tbl_Contracts_Col_Company_1_Cancel_Fee,
+			DBNames::Tbl_Contracts_Col_Company_2_Cancel_Fee,
 			DBNames::Tbl_Contracts_Col_Last_Statisfied_Time
 		));
 	}
@@ -99,13 +101,37 @@ class EContract extends Entity
 		}
 
 		$Text .= sprintf(
-			$Strings->GetString("CONTRACTLINE4"),
-			$this->Cancel_Notice_Days,
-			$this->Cancel_Fee,
-			$Strings->GetString("CURRENCY_PLURAL")
+			$Strings->GetString("CONTRACTLINE3")
 		);
 
-		// $Text = sprintf("aa %d bb", $this->Cancel_Notice_Days);
+		$Text .= sprintf(
+			$Strings->GetString("CONTRACTLINE4")
+		);
+
+		$Text .= sprintf(
+			$Strings->GetString("CONTRACTLINE5"),
+			$this->Cancel_Notice_Days
+		);
+
+		$Text .= sprintf(
+			$Strings->GetString("CONTRACTLINE6"),
+			$this->Company1->Name,
+			$this->Company_1_Cancel_Fee,
+			$Strings->GetString("CURRENCY_PLURAL"),
+			$this->Company2->Name
+		);
+
+		$Text .= sprintf(
+			$Strings->GetString("CONTRACTLINE6"),
+			$this->Company2->Name,
+			$this->Company_2_Cancel_Fee,
+			$Strings->GetString("CURRENCY_PLURAL"),
+			$this->Company1->Name
+		);
+
+		$Text .= sprintf(
+			$Strings->GetString("CONTRACTLINE7")
+		);
 
 		return $Text;
 	}

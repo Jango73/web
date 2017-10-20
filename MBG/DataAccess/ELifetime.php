@@ -5,10 +5,10 @@ require_once("DBNames.php");
 
 class ELifetime extends Entity
 {
-	var $IssueDate;
-	var $CreationDate;
-	var $TerminationDate;
-	var $IsActive;
+	var $Issue_Date;
+	var $Creation_Date;
+	var $Termination_Date;
+	var $Is_Active;
 
 	public function __construct ()
 	{
@@ -17,10 +17,10 @@ class ELifetime extends Entity
 		$this->TableName = DBNames::Tbl_Lifetime;
 
 		$this->AddColumns(Array(
-			DBNames::Tbl_Lifetime_Col_IssueDate,
-			DBNames::Tbl_Lifetime_Col_CreationDate,
-			DBNames::Tbl_Lifetime_Col_TerminationDate,
-			DBNames::Tbl_Lifetime_Col_IsActive
+			DBNames::Tbl_Lifetime_Col_Issue_Date,
+			DBNames::Tbl_Lifetime_Col_Creation_Date,
+			DBNames::Tbl_Lifetime_Col_Termination_Date,
+			DBNames::Tbl_Lifetime_Col_Is_Active
 		));
 	}
 
@@ -30,15 +30,14 @@ class ELifetime extends Entity
 
 	public static function Create()
 	{
-		$NewLifetime = new ELifetime();
-		// $NewLifetime->IssueDate = new DateTime();
-		$NewLifetime->CreationDate = null;
-		$NewLifetime->TerminationDate = null;
-		$NewLifetime->IsActive = 0;
+		$Lifetime = new ELifetime();
+		// $NewLifetime->Issue_Date = new DateTime();
+		$Lifetime->Creation_Date = null;
+		$Lifetime->Termination_Date = null;
+		$Lifetime->Is_Active = 0;
 
-		$NewLifetime->Persist();
-
-		return $NewLifetime;
+		$Lifetime->Persist();
+		return $Lifetime;
 	}
 }
 

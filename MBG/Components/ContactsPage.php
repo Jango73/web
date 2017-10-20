@@ -1,9 +1,8 @@
 <?php
 
-require_once 'php-entities/Components/Page.php';
-require_once 'php-entities/Components/RenderContext.php';
+require_once "ProtectedPage.php";
 
-class ContactsPage extends Page
+class ContactsPage extends ProtectedPage
 {
 	public function __construct ($Context, $Name)
 	{

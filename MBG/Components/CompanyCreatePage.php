@@ -1,7 +1,6 @@
 <?php
 
-require_once "php-entities/Components/Page.php";
-require_once "php-entities/Components/RenderContext.php";
+require_once "ProtectedPage.php";
 
 require_once "php-entities/Components/Label.php";
 require_once "php-entities/Components/TitleLabel.php";
@@ -60,7 +59,7 @@ class CreateCompanyHandler extends EventHandler
 	}
 }
 
-class CompanyCreatePage extends Page
+class CompanyCreatePage extends ProtectedPage
 {
 	public function __construct ($Context, $Name)
 	{

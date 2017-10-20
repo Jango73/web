@@ -37,10 +37,12 @@ class EBankAccount extends Entity
 			DBNames::Tbl_BankAccounts_Col_Money_Balance
 		));
 
+		/*
 		$this->AddJoins(Array(
 			new EntityJoin(DBNames::Tbl_BankAccounts_Col_ID_Company_Owner, DBNames::Tbl_Companies, DBNames::Generic_Col_ID, "CompOwner"),
 			new EntityJoin(DBNames::Tbl_BankAccounts_Col_ID_Company_Client, DBNames::Tbl_Companies, DBNames::Generic_Col_ID, "CompClient")
 		));
+		*/
 	}
 
 	public function GetChildren()

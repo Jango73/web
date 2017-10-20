@@ -16,10 +16,10 @@ class DBNames
 	const Tbl_Companies_Col_Worker_Daily_Wage = "Worker_Daily_Wage";
 
 	const Tbl_Lifetime = "Lifetime";
-	const Tbl_Lifetime_Col_IssueDate = "IssueDate";
-	const Tbl_Lifetime_Col_CreationDate = "CreationDate";
-	const Tbl_Lifetime_Col_TerminationDate = "TerminationDate";
-	const Tbl_Lifetime_Col_IsActive = "IsActive";
+	const Tbl_Lifetime_Col_Issue_Date = "Issue_Date";
+	const Tbl_Lifetime_Col_Creation_Date = "Creation_Date";
+	const Tbl_Lifetime_Col_Termination_Date = "Termination_Date";
+	const Tbl_Lifetime_Col_Is_Active = "Is_Active";
 
 	const Tbl_Agencies = "Agencies";
 	const Tbl_Agencies_Col_ID_Company = "ID_Company";
@@ -39,10 +39,11 @@ class DBNames
 	const Tbl_BankAccounts_Col_Money_Balance = "Money_Balance";
 
 	const Tbl_Loans = "Loans";
-	const Tbl_Loans_Col_ID_Company_Lender = "ID_Company_Lender";
 	const Tbl_Loans_Col_ID_User_Lender = "ID_User_Lender";
-	const Tbl_Loans_Col_ID_Company_Borrower = "ID_Company_Borrower";
+	const Tbl_Loans_Col_ID_Company_Lender = "ID_Company_Lender";
 	const Tbl_Loans_Col_ID_Bank_Account_Lender = "ID_Bank_Account_Lender";
+	const Tbl_Loans_Col_ID_User_Borrower = "ID_User_Borrower";
+	const Tbl_Loans_Col_ID_Company_Borrower = "ID_Company_Borrower";
 	const Tbl_Loans_Col_ID_Bank_Account_Borrower = "ID_Bank_Account_Borrower";
 	const Tbl_Loans_Col_Number = "Number";
 	const Tbl_Loans_Col_Interest_Rate = "Interest_Rate";
@@ -51,10 +52,19 @@ class DBNames
 	const Tbl_MoneyTransfers = "MoneyTransfers";
 	const Tbl_MoneyTransfers_Col_ID_Bank_Account_Sender = "ID_Bank_Account_Sender";
 	const Tbl_MoneyTransfers_Col_ID_Bank_Account_Receiver = "ID_Bank_Account_Receiver";
+	const Tbl_MoneyTransfers_Col_Description_Sender = "Description_Sender";
+	const Tbl_MoneyTransfers_Col_Description_Receiver = "Description_Receiver";
 	const Tbl_MoneyTransfers_Col_Number = "Number";
 	const Tbl_MoneyTransfers_Col_Money_Amount = "Money_Amount";
 	const Tbl_MoneyTransfers_Col_Issue_Date = "Issue_Date";
 	const Tbl_MoneyTransfers_Col_Execution_Date = "Execution_Date";
+	const Tbl_MoneyTransfers_Col_Executed = "Executed";
+
+	const Tbl_Transactions = "Transactions";
+	const Tbl_Transactions_Col_ID_Bank_Account = "ID_Bank_Account";
+	const Tbl_Transactions_Col_Execution_Date = "Execution_Date";
+	const Tbl_Transactions_Col_Description = "Description";
+	const Tbl_Transactions_Col_Money_Amount = "Money_Amount";
 
 	const Tbl_Contracts = "Contracts";
 	const Tbl_Contracts_Col_ID_Company_1 = "ID_Company_1";
@@ -69,7 +79,8 @@ class DBNames
 	const Tbl_Contracts_Col_Periodicity_Months = "Periodicity_Months";
 	const Tbl_Contracts_Col_Periodicity_Days = "Periodicity_Days";
 	const Tbl_Contracts_Col_Cancel_Notice_Days = "Cancel_Notice_Days";
-	const Tbl_Contracts_Col_Cancel_Fee = "Cancel_Fee";
+	const Tbl_Contracts_Col_Company_1_Cancel_Fee = "Company_1_Cancel_Fee";
+	const Tbl_Contracts_Col_Company_2_Cancel_Fee = "Company_2_Cancel_Fee";
 	const Tbl_Contracts_Col_Last_Statisfied_Time = "Last_Statisfied_Time";
 
 	const Tbl_ContractDue = "ContractDue";
@@ -83,22 +94,24 @@ class DBNames
 	const Tbl_ContractDue_Col_ID_Group = "ID_Group";
 	const Tbl_ContractDue_Col_Amount = "Amount";
 
+	const Tbl_ContractDueType = "ContractDueType";
+
 	const Tbl_Surfaces = "Surfaces";
 	const Tbl_Surfaces_Col_Residential_M2 = "Residential_M2";
 	const Tbl_Surfaces_Col_Industrial_M2 = "Industrial_M2";
 	const Tbl_Surfaces_Col_Commercial_M2 = "Commercial_M2";
 	const Tbl_Surfaces_Col_Storage_M3 = "Storage_M3";
 
-	const Enum_ContractDue_Type_Money = 1;
-	const Enum_ContractDue_Type_Surface_Rent = 2;
-	const Enum_ContractDue_Type_Brand = 3;
-	const Enum_ContractDue_Type_Resource = 4;
-	const Enum_ContractDue_Type_Product = 5;
-	const Enum_ContractDue_Type_Building = 6;
-	const Enum_ContractDue_Type_Vehicle = 7;
-	const Enum_ContractDue_Type_Company_Parts = 8;
-	const Enum_ContractDue_Type_Company = 9;
-	const Enum_ContractDue_Type_Group = 10;
+	const Enum_ContractDueType_Money = 1;
+	const Enum_ContractDueType_Surface_Rent = 2;
+	const Enum_ContractDueType_Brand = 3;
+	const Enum_ContractDueType_Resource = 4;
+	const Enum_ContractDueType_Product = 5;
+	const Enum_ContractDueType_Building = 6;
+	const Enum_ContractDueType_Vehicle = 7;
+	const Enum_ContractDueType_Company_Parts = 8;
+	const Enum_ContractDueType_Company = 9;
+	const Enum_ContractDueType_Group = 10;
 }
 
 ?>

@@ -66,13 +66,13 @@ class EContractDue extends Entity
 	{
 		switch ($this->ID_Type)
 		{
-			case DBNames::Enum_ContractDue_Type_Money:
+			case DBNames::Enum_ContractDueType_Money:
 			{
 				return $this->Amount . " " . $Strings->GetString("CURRENCY_PLURAL");
 			}
 			break;
 
-			case DBNames::Enum_ContractDue_Type_Surface_Rent:
+			case DBNames::Enum_ContractDueType_Surface_Rent:
 			{
 				// return "100 square meters of commercial surface";
 				$Text = "";
@@ -123,7 +123,7 @@ class EContractDue extends Entity
 			}
 			break;
 
-			case DBNames::Enum_ContractDue_Type_Brand:
+			case DBNames::Enum_ContractDueType_Brand:
 			{
 				return sprintf(
 					$Strings->GetString("USAGEOFBRAND"),
@@ -132,7 +132,7 @@ class EContractDue extends Entity
 			}
 			break;
 
-			case DBNames::Enum_ContractDue_Type_Resource:
+			case DBNames::Enum_ContractDueType_Resource:
 			{
 				return sprintf(
 					$Strings->GetString("SOMECUBICMETERSOFSOMETHING"),
@@ -142,7 +142,7 @@ class EContractDue extends Entity
 			}
 			break;
 
-			case DBNames::Enum_ContractDue_Type_Product:
+			case DBNames::Enum_ContractDueType_Product:
 			{
 				return sprintf(
 					$Strings->GetString("SOMECUBICMETERSOFSOMETHING"),
@@ -152,31 +152,31 @@ class EContractDue extends Entity
 			}
 			break;
 
-			case DBNames::Enum_ContractDue_Type_Building:
+			case DBNames::Enum_ContractDueType_Building:
 			{
 				return "building";
 			}
 			break;
 
-			case DBNames::Enum_ContractDue_Type_Vehicle:
+			case DBNames::Enum_ContractDueType_Vehicle:
 			{
 				return "vehicle";
 			}
 			break;
 
-			case DBNames::Enum_ContractDue_Type_Company_Parts:
+			case DBNames::Enum_ContractDueType_Company_Parts:
 			{
 				return "company parts";
 			}
 			break;
 
-			case DBNames::Enum_ContractDue_Type_Company:
+			case DBNames::Enum_ContractDueType_Company:
 			{
 				return "company";
 			}
 			break;
 
-			case DBNames::Enum_ContractDue_Type_Group:
+			case DBNames::Enum_ContractDueType_Group:
 			{
 				return "group";
 			}

@@ -74,20 +74,19 @@ class ECompany extends Entity
 	{
 		$Lifetime = ELifetime::Create();
 
-		$NewCompany = new ECompany();
-		$NewCompany->ID_Group = null;
-		$NewCompany->ID_User_Ceo = $User_ID;
-		$NewCompany->ID_Country = 1;
-		$NewCompany->ID_Type = 1;
-		$NewCompany->ID_Lifetime = $Lifetime->ID;
-		$NewCompany->Name = $Name;
-		$NewCompany->Number = 0;
-		$NewCompany->Cash = 5000;
-		$NewCompany->Worker_Daily_Wage = 10;
+		$Company = new ECompany();
+		$Company->ID_Group = null;
+		$Company->ID_User_Ceo = $User_ID;
+		$Company->ID_Country = 1;
+		$Company->ID_Type = 1;
+		$Company->ID_Lifetime = $Lifetime->ID;
+		$Company->Name = $Name;
+		$Company->Number = 0;
+		$Company->Cash = 5000;
+		$Company->Worker_Daily_Wage = 10;
 
-		$NewCompany->Persist();
-
-		return $NewCompany;
+		$Company->Persist();
+		return $Company;
 	}
 }
 
