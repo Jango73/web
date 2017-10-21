@@ -57,7 +57,7 @@ foreach ($reqs as $req)
 		{
 			$num_errors++;
 			echo "<b>";
-			echo mysql_error();
+			echo $Conn->GetLastError();
 			echo "</b><br>";
 		}
 	}
