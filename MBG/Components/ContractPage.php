@@ -1,7 +1,6 @@
 <?php
 
-require_once "php-entities/Components/Page.php";
-require_once "php-entities/Components/RenderContext.php";
+require_once "ProtectedPage.php";
 
 require_once "php-entities/Components/Tabs.php";
 require_once "php-entities/Components/Panel.php";
@@ -11,7 +10,7 @@ require_once "php-entities/Components/Button.php";
 
 require_once "DataAccess/EContract.php";
 
-class ContractPage extends Page
+class ContractPage extends ProtectedPage
 {
 	protected $Contract;
 

@@ -1,6 +1,7 @@
 <?php
     
 require_once("php-entities/DataAccess/Entity.php");
+require_once("DBNames.php");
 
 class EDictionaryEntry extends Entity
 {

@@ -1,7 +1,6 @@
 <?php
 
-require_once 'php-entities/Components/Page.php';
-require_once 'php-entities/Components/RenderContext.php';
+require_once "ProtectedPage.php";
 
 require_once 'php-entities/Components/Label.php';
 require_once 'php-entities/Components/Button.php';
@@ -10,7 +9,7 @@ require_once 'GroupPreview.php';
 
 require_once 'DataAccess/EGroup.php';
 
-class GroupsPage extends Page
+class GroupsPage extends ProtectedPage
 {
 	protected $GroupList;
 

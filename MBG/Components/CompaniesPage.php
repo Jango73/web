@@ -1,7 +1,6 @@
 <?php
 
-require_once "php-entities/Components/Page.php";
-require_once "php-entities/Components/RenderContext.php";
+require_once "ProtectedPage.php";
 
 require_once "php-entities/Components/Label.php";
 require_once "php-entities/Components/TitleLabel.php";
@@ -9,7 +8,7 @@ require_once "CompanyPreview.php";
 
 require_once "DataAccess/ECompany.php";
 
-class CompaniesPage extends Page
+class CompaniesPage extends ProtectedPage
 {
 	protected $CompanyList;
 

@@ -93,7 +93,10 @@ class MBGStrings
 				"CONTRACTLINE1" => "Introduction<br><br>The present document defines a %s contract between %s and %s.<br><br>",
 				"CONTRACTLINE2" => "Contract terms<br><br>%s will provide %s to %s.<br>In return, %s will provide %s to %s.<br><br>",
 				"CONTRACTLINE3" => "",
-				"CONTRACTLINE4" => "Contract termination<br><br>If either of the involved parties wishes to terminate this contract before the original contract end date, they will notify the other party within a minimum of %d days before the desired termination date, and will pay the other party a fee of %s %s.<br>",
+				"CONTRACTLINE4" => "Contract termination<br><br>",
+				"CONTRACTLINE5" => "If either of the involved parties wishes to terminate this contract before the original contract end date, they will notify the other party within a minimum of %d days before the desired termination date.<br>",
+				"CONTRACTLINE6" => "In the case of %s canceling the contract, a fee of %s %s shall be paid to %s.<br><br>",
+				"CONTRACTLINE7" => "Payment default<br><br>",
 
 				"WELCOMETEXT" => "Welcome to Mass Business Game.<br>This game aims at one single goal : making (virtual) money.<br><br>If you are new to this game, click 'Create account'.<br>If you own an account, click 'Log in'.",
 				"PLEASEIDENTIFY" => "Please identify yourself by entering your name and password.",
@@ -195,7 +198,10 @@ class MBGStrings
 				"CONTRACTLINE1" => "Introduction<br><br>Le présent document définie un contrat de %s entre %s et %s.<br><br>",
 				"CONTRACTLINE2" => "Termes du contrat<br><br>%s devra fournir %s à %s.<br>En retour, %s devra fournir %s à %s.<br><br>",
 				"CONTRACTLINE3" => "",
-				"CONTRACTLINE4" => "Terminaison du contrat<br><br>Si l'une des deux parties souhaite mettre un terme au contrat avant l'échéance d'origine, celle-ci devra notifier l'autre partie dans un minimum de %d jours avant la date souhaitée de terminaison, et devra payer un forfait de %s %s à l'autre partie.<br>",
+				"CONTRACTLINE4" => "Terminaison du contrat<br><br>",
+				"CONTRACTLINE5" => "Si l'une des deux parties souhaite mettre un terme au contrat avant l'échéance d'origine, celle-ci devra notifier l'autre partie dans un minimum de %d jours avant la date souhaitée de terminaison.<br>",
+				"CONTRACTLINE6" => "Dans le cas ou %s annule contrat, un forfait de %s %s sera payé à %s.<br><br>",
+				"CONTRACTLINE7" => "Défaut de paiement<br><br>",
 
 				"WELCOMETEXT" => "Bienvenue dans Mass Business Game.<br>Ce jeu comporte un principe simple : faire de l'argent (virtuel).<br><br>If you are new to this game, click 'Create account'.<br>If you own an account, click 'Log in'.",
 				"PLEASEIDENTIFY" => "Veuillez vous identifier en saisissant votre nom et mot de passe.",

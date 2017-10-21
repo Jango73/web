@@ -8,7 +8,7 @@ class EContractDueType extends EDictionaryEntry
 	{
 		parent::__construct();
 
-		$this->TableName = "ContractDueType";
+		$this->TableName = DBNames::Tbl_ContractDueType;
 	}
 }
 
