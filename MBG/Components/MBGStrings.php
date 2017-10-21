@@ -60,6 +60,13 @@ class MBGStrings
 				"STORAGESURFACE" => "Storage surface",
 				"USAGEOFBRAND" => "the right to use the brand %s",
 
+				"FRANCE" => "France",
+				"GERMANY" => "Germany",
+				"UNITEDKINGDOMS" => "United kingdoms",
+				"SPAIN" => "Spain",
+				"IRELAND" => "Ireland",
+				"PORTUGAL" => "Portugal",
+
 				"GOLD" => "Gold",
 				"OIL" => "Oil",
 				"IRON" => "Iron",
@@ -154,6 +161,13 @@ class MBGStrings
 				"COMMERCIALSURFACE" => "Surface commerciale",
 				"STORAGESURFACE" => "Surface de stockage",
 				"USAGEOFBRAND" => "le droit d'utilisation de la marque %s",
+
+				"FRANCE" => "France",
+				"GERMANY" => "Allemagne",
+				"UNITEDKINGDOMS" => "Royaumes Unis",
+				"SPAIN" => "Espagne",
+				"IRELAND" => "Irlande",
+				"PORTUGAL" => "Portugal",
 
 				"GOLD" => "Or",
 				"OIL" => "Pétrole",
