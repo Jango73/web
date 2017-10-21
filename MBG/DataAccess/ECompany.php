@@ -74,19 +74,24 @@ class ECompany extends Entity
 	{
 		$Lifetime = ELifetime::Create();
 
-		$Company = new ECompany();
-		$Company->ID_Group = null;
-		$Company->ID_User_Ceo = $User_ID;
-		$Company->ID_Country = 1;
-		$Company->ID_Type = 1;
-		$Company->ID_Lifetime = $Lifetime->ID;
-		$Company->Name = $Name;
-		$Company->Number = 0;
-		$Company->Cash = 5000;
-		$Company->Worker_Daily_Wage = 10;
+		if ($Lifetime != null)
+		{
+			$Company = new ECompany();
+			$Company->ID_Group = null;
+			$Company->ID_User_Ceo = $User_ID;
+			$Company->ID_Country = 1;
+			$Company->ID_Type = 1;
+			$Company->ID_Lifetime = $Lifetime->ID;
+			$Company->Name = $Name;
+			$Company->Number = $Company->GetRandomNumberForField(DBNames::Tbl_Companies_Col_Number, DBNames::MaxReferenceNumber);
+			$Company->Cash = 10000;
+			$Company->Worker_Daily_Wage = 50;
 
-		$Company->Persist();
-		return $Company;
+			if ($Company->Persist())
+				return $Company;
+		}
+
+		return null;
 	}
 }
 

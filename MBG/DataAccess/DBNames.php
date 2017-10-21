@@ -2,6 +2,8 @@
 
 class DBNames
 {
+	const MaxReferenceNumber = 15;
+
 	const Generic_Col_ID = "ID";
 
 	const Tbl_Companies = "Companies";

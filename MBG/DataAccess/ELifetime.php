@@ -31,13 +31,15 @@ class ELifetime extends Entity
 	public static function Create()
 	{
 		$Lifetime = new ELifetime();
-		// $NewLifetime->Issue_Date = new DateTime();
-		$Lifetime->Creation_Date = null;
+		$Lifetime->Issue_Date = new DateTime();
+		$Lifetime->Creation_Date = new DateTime();
 		$Lifetime->Termination_Date = null;
 		$Lifetime->Is_Active = 0;
 
-		$Lifetime->Persist();
-		return $Lifetime;
+		if ($Lifetime->Persist())
+			return $Lifetime;
+
+		return null;
 	}
 }
 

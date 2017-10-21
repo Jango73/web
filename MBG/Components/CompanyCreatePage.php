@@ -31,14 +31,14 @@ class CreateCompanyHandler extends EventHandler
 						{
 							$NewCompany = ECompany::Create($Context->GetVars()->User_ID, $Name);
 
-							if ($NewCompany->ID > 0)
+							if ($NewCompany != null && $NewCompany->ID > 0)
 							{
 								$Args = array("id" => $NewCompany->ID);
 								return $Context->RedirectToPage("Company", $Args);
 							}
 							else
 							{
-								return $Context->ErrorOut("There was a problem while creating company : " . mysql_error());
+								return $Context->ErrorOut("There was a problem while creating company : " . Entity::GetLastError());
 							}
 						}
 						else
