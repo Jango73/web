@@ -43,7 +43,7 @@ class CompanyPreview extends Panel
 
 		$NewDiv = new SimpleDiv("", "");
 		$NewDiv->AddControl(new Label("", $Context->GetString("TYPE"), 100, 30));
-		$NewDiv->AddControl(new Label("CompanyType", $this->Company->Type->Code, 100, 30));
+		$NewDiv->AddControl(new Label("CompanyType", $Context->GetString($this->Company->Type->Code), 100, 30));
 		$this->AddControl($NewDiv);
 
 		$NewDiv = new SimpleDiv("", "");
